@@ -3,7 +3,7 @@ name: Test versioning
 on: push
 
 jobs:
-  check-server:
+  check-version:
     runs-on: ubuntu-latest
 
     steps:
