@@ -5,17 +5,18 @@ on: push
 jobs:
   check-version:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - name: Bump version and push tag
       id: versioning
-      uses: anothrNick/github-tag-action@master
+      uses: fabricepipart/github-tag-action@feature/prerelease-mode3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPO_OWNER: fabricepipart
+        RELEASE_BRANCHES: mas.*,production
     - name: Echo version
       env:
         version: ${{ steps.versioning.outputs.new_tag }}
       run: |
         echo $version
+
