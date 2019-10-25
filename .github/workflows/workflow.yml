@@ -9,16 +9,14 @@ jobs:
     - uses: actions/checkout@v1
     - name: Bump version and push tag
       id: versioning
-      uses: fabricepipart/github-tag-action@feature/prerelease-mode2
+      uses: fabricepipart/github-tag-action@feature/prerelease-mode3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPO_OWNER: fabricepipart
-        PRE_RELEASE: ${{ github.ref != 'refs/heads/master' }}
+        RELEASE_BRANCHES: mas.*,production
     - name: Echo version
       env:
         version: ${{ steps.versioning.outputs.new_tag }}
       run: |
-        env
-        cat $GITHUB_EVENT_PATH
         echo $version
 
