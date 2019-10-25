@@ -18,4 +18,6 @@ jobs:
       env:
         version: ${{ steps.versioning.outputs.new_tag }}
       run: |
+        env
+        cat $GITHUB_EVENT_PATH
         echo $version
