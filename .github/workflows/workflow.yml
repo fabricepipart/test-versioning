@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Bump version and push tag
       id: versioning
-      uses: fabricepipart/github-tag-action@feature/prerelease
+      uses: fabricepipart/github-tag-action@feature/prerelease-mode2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPO_OWNER: fabricepipart
