@@ -14,6 +14,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPO_OWNER: fabricepipart
+        WITH_V: ${{ github.ref != 'refs/heads/master' }}
     - name: Echo version
       env:
         version: ${{ steps.versioning.outputs.new_tag }}
