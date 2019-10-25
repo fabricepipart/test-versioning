@@ -13,3 +13,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPO_OWNER: fabricepipart
+    - name: Bump version and push tag
+      env:
+        version: ${{ outputs.new_tag }}
+      run: |
+        echo $version
