@@ -13,7 +13,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPO_OWNER: fabricepipart
-        RELEASE_BRANCHES: pouet,production
+        RELEASE_BRANCH: ".*"
     - name: Echo version
       env:
         version: ${{ steps.versioning.outputs.new_tag }}
